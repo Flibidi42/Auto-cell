@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "cell.hpp"
+#include "matrice.hpp"
 
 int main()
 {
