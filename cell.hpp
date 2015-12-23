@@ -1,8 +1,8 @@
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 const int CELL_SZ= 10;
 
-class cell{
+class Cell{
 	sf::RectangleShape rectangle;
 	bool etat;
 	int posx;
@@ -10,7 +10,7 @@ class cell{
 
 public:
 
-	cell(int posx, int posy);
+	Cell(int posx, int posy);
 	sf::RectangleShape* forme();
 	void change(bool new_etat);
 };

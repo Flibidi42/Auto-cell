@@ -13,12 +13,11 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-	
+	Cell cellule(20, 20);
 	window.clear(sf::Color::Black);
-
+	cellule.change(true);
+	window.draw(*(cellule.forme()));
 	window.display();
-
-
     }
 
 
