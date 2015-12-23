@@ -5,10 +5,11 @@ const int NB_CELL = 50;
 class Matrice{
 
 	sf::RenderWindow* window;
-	Cell* mat[NB_CELL][NB_CELL];
+	Cell* tab[NB_CELL][NB_CELL];
 	
 public:
-	Matrice(sf::RenderWindow* w);	
+	Matrice(sf::RenderWindow* w, bool init);	
+	void update();
+	void init_true(int i, int j);
 	
-
 };

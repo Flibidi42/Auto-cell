@@ -3,8 +3,9 @@
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-
+  sf::RenderWindow window(sf::VideoMode(NB_CELL*CELL_SZ, NB_CELL*CELL_SZ), "Automate cellulaire");
+  Matrice mat(&window, false);
+  mat.init_true(5,6);
     while (window.isOpen())
     {
         sf::Event event;
@@ -13,11 +14,9 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-	Cell cellule(20, 20);
+	
 	window.clear(sf::Color::Black);
-	cellule.change(true);
-	window.draw(*(cellule.forme()));
-	window.display();
+	mat.update();
     }
 
 
