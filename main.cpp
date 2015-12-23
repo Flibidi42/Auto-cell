@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-
+#include "cell.hpp"
 
 int main()
 {
@@ -7,11 +7,9 @@ int main()
 
     while (window.isOpen())
     {
-        // on inspecte tous les évènements de la fenêtre qui ont été émis depuis la précédente itération
         sf::Event event;
         while (window.pollEvent(event))
-        {
-            // évènement "fermeture demandée" : on ferme la fenêtre
+	  {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
