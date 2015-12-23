@@ -12,4 +12,5 @@ public:
 
 	cell(int posx, int posy);
 	sf::RectangleShape* forme();
+	void change(bool new_etat);
 };
