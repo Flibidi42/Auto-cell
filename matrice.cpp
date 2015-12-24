@@ -75,3 +75,12 @@ void Matrice::next(){
 	update();	
 
 }
+
+void Matrice::reset(){
+	for(int i = 0; i<NB_CELL; i++){
+		for(int j = 0; j< NB_CELL; j++){
+			tab[i][j]->change(false);
+		}
+	}
+	update();
+}

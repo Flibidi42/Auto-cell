@@ -5,25 +5,36 @@ int main()
 {
   sf::RenderWindow window(sf::VideoMode(NB_CELL*CELL_SZ, NB_CELL*CELL_SZ), "Automate cellulaire");
   Matrice mat(&window, false);
-  mat.init_true(6,5);
-  mat.init_true(6,6);
-  mat.init_true(6,7);
-  mat.init_true(7,6);
-  mat.init_true(5,6);
+  window.clear(sf::Color::Black);
   sf::Clock horloge;
+  bool go = false;
+  bool init_enable = true;
   
     while (window.isOpen())
     {
-        sf::Event event;
         if(horloge.getElapsedTime().asMilliseconds() >= 500 && go){
         	mat.next();
-		mat.update();
 		horloge.restart();
         }
+        sf::Event event;
         while (window.pollEvent(event))
 	  {
-            switch (event.type == sf::Event::Closed)
-                window.close();
+	   switch(event.type){
+           	case sf::Event::Closed:
+                	window.close();
+                	break;
+                case (sf::Event::KeyPressed):
+         		if(event.key.code == sf::Keyboard::Return){
+         			go = true;
+         			init_enable = false;
+         		}
+         		else if(event.key.code == sf::Keyboard::R){
+         			go = false;
+         			init_enable = true;
+         		}
+         	break;
+           }		
+                
         }
 	
     }
