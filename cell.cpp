@@ -13,6 +13,9 @@ sf::RectangleShape* Cell::forme(){
 	return &rectangle;
 }
 
+bool Cell::etat()
+	return etat;
+
 void Cell::change(bool new_etat){
 	if(new_etat == etat)
 		return;
@@ -26,3 +29,24 @@ void Cell::change(bool new_etat){
 	}
 			
 }
+
+bool Cell::calcul(const bool voisins[8], bool etat_cell){
+	int nb_vivant = 0;
+	for(int i = 0; i<8; i++){
+		if(voisins[i])
+			nb_vivant++;
+	}
+	if(
+
+}
+
+
+
+
+
+
+
+
+
+
+

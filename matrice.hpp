@@ -11,5 +11,7 @@ public:
 	Matrice(sf::RenderWindow* w, bool init);	
 	void update();
 	void init_true(int i, int j);
+	void next();
+	~Matrice();
 	
 };

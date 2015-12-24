@@ -19,6 +19,5 @@ int main()
 	mat.update();
     }
 
-
     return 0;
 }
