@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "cell.hpp"
-const int NB_CELL = 50;
+const int NB_CELL = 15;
 
 class Matrice{
 

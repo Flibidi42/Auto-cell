@@ -23,7 +23,7 @@ Matrice::~Matrice(){
 }
 
 void Matrice::update(){
-
+	window->clear(sf::Color::Black);
 	for(int i = 0; i< NB_CELL; i++){
 		for(int j = 0; j< NB_CELL; j++){
 			window->draw(*(tab[i][j]->forme()));
@@ -37,8 +37,6 @@ void Matrice::init_true(int i, int j){
 	tab[i][j]->change(true);
 }
 
-/*courant[k-1][l-1], courant[k-1][l], courant[k-1][l+1], courant[k][l-1], courant[k][l+1], courant[k+1][l-1], courant[k+1][l], courant[k+1][l+1]*/
-
 void Matrice::next(){
 	bool voisins[8];
 	int k = 1, l = 1;
@@ -46,14 +44,14 @@ void Matrice::next(){
 	for(int i = 0; i<NB_CELL+2; i++){
 		for(int j = 0; j< NB_CELL+2; j++){
 			if(i>0 && i<NB_CELL+1 && j>0 && j<NB_CELL+1)
-				courant[i][j] = tab[i][j]->get_etat();
+				courant[i][j] = tab[i-1][j-1]->get_etat();
 			else // bordure à false
 				courant[i][j] = false;
 		}
 	}
 	bool suivant[NB_CELL][NB_CELL]; // celui-ci contiendra l'iteration suivante
 	for(int i = 0; i< NB_CELL; i++){
-		
+		l = 1;
 		for(int j = 0; j< NB_CELL; j++){
 			voisins[0] = courant[k-1][l-1];
 			voisins[1] = courant[k-1][l];
@@ -69,8 +67,8 @@ void Matrice::next(){
 		k ++;
 	}
 	
-	for(int i = 0; i<NB_CELL+2; i++){
-		for(int j = 0; j< NB_CELL+2; j++){
+	for(int i = 0; i<NB_CELL; i++){
+		for(int j = 0; j< NB_CELL; j++){
 			tab[i][j]->change(suivant[i][j]);
 		}
 	}
