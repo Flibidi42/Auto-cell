@@ -13,6 +13,6 @@ public:
 	Cell(int posx, int posy);
 	sf::RectangleShape* forme();
 	void change(bool new_etat);
-	bool etat();
+	bool get_etat();
 	static bool calcul(const bool voisins[8], bool etat_cell);
 };

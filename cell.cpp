@@ -13,11 +13,12 @@ sf::RectangleShape* Cell::forme(){
 	return &rectangle;
 }
 
-bool Cell::etat()
+bool Cell::get_etat(){
 	return etat;
+}
 
 void Cell::change(bool new_etat){
-	if(new_etat == etat)
+	if(new_etat == this->etat)
 		return;
 	if(new_etat == false){ // cas où on change la valeur à false
 		etat = false;
@@ -36,8 +37,12 @@ bool Cell::calcul(const bool voisins[8], bool etat_cell){
 		if(voisins[i])
 			nb_vivant++;
 	}
-	if(
-
+	if(!etat_cell && nb_vivant == 3)
+		return true;
+	else if(etat_cell && nb_vivant !=2 && nb_vivant !=3)
+		return false;
+	else
+		return etat_cell;
 }
 
 
