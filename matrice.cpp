@@ -37,6 +37,11 @@ void Matrice::init_true(int i, int j){
 	tab[i][j]->change(true);
 }
 
+void Matrice::init_false(int i, int j){
+	
+	tab[i][j]->change(false);
+}
+
 void Matrice::next(){
 	bool voisins[8];
 	int k = 1, l = 1;
