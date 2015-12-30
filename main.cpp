@@ -34,7 +34,11 @@ int main()
          			init_enable = true;
          			mat.reset();
          		}
-         	break;
+         		else if(event.key.code == sf::Keyboard::P){
+         			go = false;
+         			init_enable = true;
+         		}
+         		break;
          	case(sf::Event::MouseButtonPressed):
          		if(event.mouseButton.button == sf::Mouse::Left && init_enable){
          			posx = event.mouseButton.x/CELL_SZ;
@@ -48,6 +52,7 @@ int main()
          			mat.init_false(posx, posy);
          			mat.update();
          		}
+         		break;
          		
            }		
                 
