@@ -15,4 +15,4 @@ Je propose ici un implémentation du jeu de la vie.
 * Clique droit : desactiver un cellule
 * Entrée : lancer le jeu
 * R : restart
-Je l'ai réasliser avec la librarie [sfml](http://www.sfml-dev.org/index-fr.php).
+Je l'ai réaslisé avec la librarie [sfml](http://www.sfml-dev.org/index-fr.php).
